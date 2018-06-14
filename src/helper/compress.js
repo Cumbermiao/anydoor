@@ -1,5 +1,5 @@
-const {deflate,gunzip} = require('zlib');
+// const {deflate,gunzip} = require('zlib');
 
-module.exports = function(rs,req,res){
+// module.exports = function(rs,req,res){
     
-}
+// }
