@@ -26,5 +26,10 @@
     "babel-eslint": "^8.2.3",
     "eslint": "^4.19.1",
     "pre-commit": "^1.2.2"
+  },
+  "dependencies": {
+    "art-template": "^4.12.2",
+    "chalk": "^2.4.1",
+    "path": "^0.12.7"
   }
 }
