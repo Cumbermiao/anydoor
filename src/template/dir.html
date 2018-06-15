@@ -10,11 +10,42 @@
             display: block;
             font-size:20px;
         }
+        td,th{
+            border: 1px solid #aaa;
+        }
     </style>
 </head>
 <body>
     {{each files item}}
         <a href="{{dir}}/{{item}}">{{item}}</a>
     {{/each}}
+    <!-- <table>
+        <thead>
+            <tr>
+                <th colspan="4">系统1</th>
+                <th colspan="6">主数据</th>
+                <th colspan="7">相关系统</th>
+            </tr>
+            <tr>
+                <td>表中文名</td>
+                <td>表英文名</td>
+                <td>字段中文名</td>
+                <td colspan="2">字段英文名</td>
+                <td>流向</td>
+
+                <td>表中文名</td>
+                <td>表英文名</td>
+                <td>字段中文名</td>
+                <td colspan="2">字段英文名</td>
+                <td>流向</td>
+
+                <td>系统名称</td>
+                <td>表中文名</td>
+                <td>表英文名</td>
+                <td>字段中文名</td>
+                <td>字段英文名</td>
+            </tr>
+        </thead>
+    </table> -->
 </body>
 </html>

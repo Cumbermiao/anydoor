@@ -5,7 +5,7 @@ const conf = require('./config/defaultConf');
 const pathSolver = require('./helper/router.js');
 const server = http.createServer((req, res) => {
     const filePath = path.join(conf.root, req.url);
-    console.log(conf.root,req['accept-encoding'])
+    console.log(conf.root,filePath,req.headers['accept-encoding'])
     pathSolver(req,res,filePath);
 });
 server.listen(conf.port, () => {
