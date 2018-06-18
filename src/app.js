@@ -3,6 +3,7 @@ const chalk = require('chalk');
 const path = require('path');
 const conf = require('./config/defaultConf');
 const pathSolver = require('./helper/router.js');
+const openUrl = require('./helper/open');
 // const server = http.createServer((req, res) => {
 //     const filePath = path.join(conf.root, req.url);
 //     console.log(conf.root, filePath, req.headers['accept-encoding'])
@@ -16,10 +17,8 @@ const pathSolver = require('./helper/router.js');
 class Server{
     constructor(defaultConfig) {
         this.conf = Object.assign({}, conf, defaultConfig);
-        console.log(this.config)
     }
     start() {
-        console.log(this.conf)
         const server = http.createServer((req, res) => {
             const filePath = path.join(this.conf.root, req.url);
             console.log(this.conf.root, filePath, req.headers['accept-encoding'])
@@ -28,6 +27,7 @@ class Server{
         server.listen(this.conf.port, () => {
             const addr = `http://${this.conf.host}:${this.conf.port}`;
             console.info(`starting at ${chalk.green(addr)}`);
+            openUrl(addr);
         });
     }
 

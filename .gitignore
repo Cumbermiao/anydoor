@@ -9,6 +9,7 @@ yarn-error.log*
 .idea/
 build/
 dist/
+.vscode/
 
 # Runtime data
 pids
