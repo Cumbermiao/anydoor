@@ -2,7 +2,10 @@
   "name": "anydoor",
   "version": "1.0.0",
   "description": "Tiny Node Static Web Server",
-  "main": "src/index.js",
+  "main": "src/app.js",
+  "bin":{
+    "anydoor":"bin/anydoor"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
@@ -30,6 +33,7 @@
   "dependencies": {
     "art-template": "^4.12.2",
     "chalk": "^2.4.1",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "yargs": "^11.0.0"
   }
 }
