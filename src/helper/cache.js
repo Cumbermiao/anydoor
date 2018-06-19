@@ -22,11 +22,9 @@ module.exports = (stat,req,res)=>{
         return false;
     }
     if(reqEtag&&reqEtag!=res.getHeader('ETag')){
-        console.log('ETag:',reqEtag,res.getHeader('ETag'))
         return false;
     }
     if(reqLastModified&&reqLastModified!=res.getHeader('Last-Modified')){
-        console.log('Modified:',reqLastModified,res.getHeader('Last-Modified'))        
         return false;
     }
     return true;

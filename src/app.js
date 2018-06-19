@@ -21,7 +21,6 @@ class Server{
     start() {
         const server = http.createServer((req, res) => {
             const filePath = path.join(this.conf.root, req.url);
-            console.log(this.conf.root, filePath, req.headers['accept-encoding'])
             pathSolver(req, res, filePath,this.conf);
         });
         server.listen(this.conf.port, () => {

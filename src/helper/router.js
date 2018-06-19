@@ -18,7 +18,6 @@ module.exports = async function (req, res, filePath,conf) {
         if (stats.isFile()) {
             let ext = mime(filePath);
             res.setHeader('content-type', ext);
-            console.log(toCache(stats,req,res))
             if(toCache(stats,req,res)){
                 res.statusCode=304;
                 res.end();
@@ -37,7 +36,6 @@ module.exports = async function (req, res, filePath,conf) {
             if(filePath.match(conf.compress)){
                 rs = compress(rs, req, res);
             }
-            console.log(res.statusCode)
             rs.pipe(res);
         } else if (stats.isDirectory()) {
             const files = await readdir(filePath);
@@ -45,7 +43,7 @@ module.exports = async function (req, res, filePath,conf) {
             const title = path.basename(filePath);
             var html = artTemplate(tplPath, {
                 files,
-                dir,
+                dir:dir?`/${dir}`:'',
                 title
             });
             res.writeHead(200, {
